@@ -1,32 +1,20 @@
 from django.conf import settings
+from django.contrib.auth.tokens import default_token_generator
 from django.core.mail import send_mail
 from django.shortcuts import get_object_or_404
-from django.contrib.auth.tokens import default_token_generator
 from django_filters.rest_framework import DjangoFilterBackend
-
-from rest_framework import viewsets, status, permissions, filters, mixins
+from rest_framework import filters, mixins, permissions, status, viewsets
+from rest_framework.decorators import action, api_view, permission_classes
 from rest_framework.pagination import LimitOffsetPagination
 from rest_framework.response import Response
-from rest_framework.decorators import api_view, permission_classes, action
+from reviews.models import Category, Genre, Review, Title, User
 
 from .filters import TitleFilter
-from reviews.models import Category, Genre, Title, Review, User
-from .permissions import (
-    IsOwnerAdminModeratorOrReadOnly,
-    ReadOnly,
-    IsAdmin
-)
-from .serializers import (
-    CategorySerializer,
-    GenreSerializer,
-    TitleSerializer,
-    ReviewSerializer,
-    CommentSerializer,
-    TitleSerializerRead,
-    GetJWTSerializer,
-    SignUpSerializer,
-    UserSerializer
-)
+from .permissions import IsAdmin, IsOwnerAdminModeratorOrReadOnly, ReadOnly
+from .serializers import (CategorySerializer, CommentSerializer,
+                          GenreSerializer, GetJWTSerializer, ReviewSerializer,
+                          SignUpSerializer, TitleSerializer,
+                          TitleSerializerRead, UserSerializer)
 
 
 class CreateDestroyViewSet(
@@ -110,6 +98,7 @@ def get_token(request):
     if serializer.is_valid():
         data = {'token': serializer.data.get('token')}
         return Response(data, status=status.HTTP_200_OK)
+    return Response(status=status.HTTP_400_BAD_REQUEST)
 
 
 @api_view(['POST'])
