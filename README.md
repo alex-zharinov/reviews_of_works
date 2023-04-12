@@ -2,6 +2,10 @@
 ## API-сервис для публикации отзывов на произведения, упакованный в контейнеры с помощью Docker
 https://github.com/alex-zharinov/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg
 ---
+## Адрес сервера:
+
+62.84.127.56
+
 ## Особенности:
 
 - Система регистрация пользователей и выдача токенов.
