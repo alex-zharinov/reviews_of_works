@@ -4,7 +4,7 @@ https://github.com/alex-zharinov/yamdb_final/actions/workflows/yamdb_workflow.ym
 ---
 ## Адрес сервера:
 
-62.84.127.56
+https://62.84.127.56/
 
 ## Особенности:
 
