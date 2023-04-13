@@ -1,6 +1,6 @@
 # Учебный проект в рамках курса "Python-разработчик" от ЯндексПрактикум. Спринт 13.
 ## API-сервис для публикации отзывов на произведения, упакованный в контейнеры с помощью Docker
-![workflow](https://github.com/github/docs/actions/workflows/yamdb_workflow.yml/badge.svg)
+![workflow](https://github.com/alex-zharinov/yamdb_final/blob/master/.github/workflows/yamdb_workflow.yml/badge.svg)
 ---
 ## Адрес сервера:
 
