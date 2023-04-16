@@ -4,11 +4,11 @@
 ---
 ## Адрес сервера:
 
-https://158.160.56.123/
+http://158.160.44.64/
 
 ## Документация проекта:
 ```
-http://158.160.56.123/redoc/
+http://158.160.44.64/redoc/
 ```
 
 ## Особенности:
@@ -68,9 +68,15 @@ docker-compose exec web python manage.py loaddata
 
 ## ⤵️ Примеры запросов:
 
- - /redoc/ - документация
- - /api/v1/titles/ - получение списка всех произведений
- - /api/v1/titles/{titles_id}/ - получение информации о произведении
+ - curl -X POST http://158.160.44.64/api/v1/auth/signup/
+   -H 'Content-Type: application/json'
+   -d '{"email": "user@example.com","username": "string"}' - регистрация
+ - curl -X POST http://158.160.44.64/api/v1/titles/{title_id}/reviews/
+   -H 'Content-Type: application/json'
+   -d '{"text": "string","score": 1}' - добавление отзыва
+ - curl -X POST http://158.160.44.64/api/v1/titles/{title_id}/reviews/
+   -H 'Content-Type: application/json'
+   -d '{"text": "string"}' - добавление комментария
 
 ## ⤵️ Пример env-файла:
 ```
