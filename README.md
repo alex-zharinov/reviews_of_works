@@ -50,7 +50,7 @@ git git@github.com:alex-zharinov/infra_sp2.git
 ```
 
 ```bash
-cd api_yamdb
+cd api_yamdb 
 ```
 
 - Запустите docker-compose:
